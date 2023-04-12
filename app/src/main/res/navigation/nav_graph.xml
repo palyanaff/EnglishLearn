@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/levelsFragment">
+
+    <fragment
+        android:id="@+id/levelsFragment"
+        android:name="ru.palyanaff.englishlearn.screens.levels.LevelsFragment"
+        android:label="Levels"
+        tools:layout="@layout/fragment_levels">
+    </fragment>
+
+    <fragment
+        android:id="@+id/runnerFragment"
+        android:name="ru.palyanaff.englishlearn.screens.runner.RunnerFragment"
+        android:label="Runner"
+        tools:layout="@layout/fragment_runner" />
+    <fragment
+        android:id="@+id/dictionaryFragment"
+        android:name="ru.palyanaff.englishlearn.screens.dictionary.DictionaryFragment"
+        android:label="Dictionary"
+        tools:layout="@layout/fragment_dictionary">
+        <action
+            android:id="@+id/action_dictionaryFragment_to_newDictionary"
+            app:destination="@id/newDictionary" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="ru.palyanaff.englishlearn.screens.menu.MenuFragment"
+        android:label="Menu"
+        tools:layout="@layout/fragment_menu" />
+    <fragment
+        android:id="@+id/newDictionary"
+        android:name="ru.palyanaff.englishlearn.screens.dictionary.NewDictionary"
+        android:label="New dictionary"
+        tools:layout="@layout/fragment_new_dictionary" />
+
+
+</navigation>
