@@ -16,4 +16,8 @@
     <string name="username_text">Username:</string>
     <string name="email_text" translatable="false">E-mail:</string>
     <string name="profile">Profile</string>
+    <string name="task">Task</string>
+    <string name="edit_hint">Enter answer</string>
+    <string name="check">Check</string>
+    <string name="skip">Skip</string>
 </resources>
