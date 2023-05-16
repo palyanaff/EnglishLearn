@@ -13,7 +13,7 @@ import java.util.Collections;
 import java.util.List;
 
 import ru.palyanaff.englishlearn.data.Word;
-//import ru.palyanaff.englishlearn.datasource.Datasource;
+import ru.palyanaff.englishlearn.datasource.Datasource;
 
 public class RunnerViewModel extends AndroidViewModel {
 
@@ -21,8 +21,8 @@ public class RunnerViewModel extends AndroidViewModel {
 
     @SuppressLint("StaticFieldLeak")
     private final Context context;
-    //private final Datasource datasource;
-    //private final List<Word> words;
+    private final Datasource datasource;
+    private final List<Word> words;
 
     private final MutableLiveData<Integer> wordCounter;
 
@@ -34,17 +34,17 @@ public class RunnerViewModel extends AndroidViewModel {
     public RunnerViewModel(@NonNull Application application) {
         super(application);
         context = application.getApplicationContext();
-        //datasource = new Datasource(context);
-        //words = datasource.loadWordsForRunner();
-        //Collections.shuffle(words);
+        datasource = new Datasource(context);
+        words = datasource.loadWordsForRunner();
+        Collections.shuffle(words);
 
         wordCounter= new MutableLiveData<>(0);
-        //word = words.get(wordCounter.getValue());
+        word = words.get(wordCounter.getValue());
 
         _currentWord = new MutableLiveData<>(word.getWordTranslation());
         _answerWord = new MutableLiveData<>(word.getWordText());
 
-        //getNextWord();
+        getNextWord();
     }
 
 
@@ -59,7 +59,7 @@ public class RunnerViewModel extends AndroidViewModel {
     public LiveData<String> getAnswerWord() {
         return _answerWord;
     }
-    /*
+
     public void getNextWord() {
         if (wordCounter.getValue() < words.size()){
             word = words.get(wordCounter.getValue());
@@ -69,16 +69,16 @@ public class RunnerViewModel extends AndroidViewModel {
         wordCounter.setValue(wordCounter.getValue() + 1);
     }
 
-     */
+
 
     public Word getWord() {
         return word;
     }
-    /*
+
     public void getSkipWord(){
         words.add(words.get(wordCounter.getValue()));
         getNextWord();
     }
 
-    */
+
 }

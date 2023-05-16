@@ -15,13 +15,13 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.firebase.auth.FirebaseAuth;
+/*import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.database.ValueEventListener;*/
 
 import java.util.Locale;
 
@@ -34,8 +34,8 @@ public class TaskFragment extends Fragment {
 
     private FragmentTaskBinding binding;
 
-    private FirebaseUser firebaseUser;
-    private DatabaseReference usersRef;
+    /*private FirebaseUser firebaseUser;
+    private DatabaseReference usersRef;*/
 
     private User user;
 
@@ -53,15 +53,15 @@ public class TaskFragment extends Fragment {
         super.onCreate(savedInstanceState);
         binding = FragmentTaskBinding.inflate(getLayoutInflater());
 
-        FirebaseAuth auth = FirebaseAuth.getInstance();
+        /*FirebaseAuth auth = FirebaseAuth.getInstance();
         firebaseUser = auth.getCurrentUser();
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         usersRef = database.getReference("Users");
 
-        setUserByUserFromDB();
+        setUserByUserFromDB();*/
     }
 
-    private void setUserByUserFromDB() {
+    /*private void setUserByUserFromDB() {
         usersRef.child(firebaseUser.getUid())
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
@@ -78,7 +78,7 @@ public class TaskFragment extends Fragment {
                         Log.d(TAG, "Failed to get actual data");
                     }
                 });
-    }
+    }*/
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -164,7 +164,7 @@ public class TaskFragment extends Fragment {
         }
     }
 
-    @Override
+    /*@Override
     public void onPause() {
         super.onPause();
 
@@ -174,7 +174,7 @@ public class TaskFragment extends Fragment {
         } else {
             Log.d(TAG, "User is null on saving user in DB");
         }
-    }
+    }*/
 
     @NonNull
     private OnCompleteListener<Void> setValueOnComplete() {

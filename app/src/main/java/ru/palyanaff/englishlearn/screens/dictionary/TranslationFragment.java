@@ -2,10 +2,7 @@ package ru.palyanaff.englishlearn.screens.dictionary;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SearchView;
@@ -13,34 +10,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-/*
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
- */
-
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-
-import ru.palyanaff.englishlearn.R;
-import ru.palyanaff.englishlearn.adapter.WordAdapter;
-import ru.palyanaff.englishlearn.data.User;
-import ru.palyanaff.englishlearn.data.Word;
+import ru.palyanaff.englishlearn.adapter.MeaningAdapter;
+import ru.palyanaff.englishlearn.adapter.PhoneticAdapter;
 import ru.palyanaff.englishlearn.databinding.FragmentTranslationBinding;
-import ru.palyanaff.englishlearn.databinding.FragmentWordListBinding;
-import ru.palyanaff.englishlearn.datasource.Datasource;
+import ru.palyanaff.englishlearn.translation.OnFetchDataListener;
+import ru.palyanaff.englishlearn.translation.RequestManager;
+import ru.palyanaff.englishlearn.translation.models.APIResponse;
 
 public class TranslationFragment extends Fragment {
     private static final String TAG = "TranslationFragment";
@@ -49,8 +28,8 @@ public class TranslationFragment extends Fragment {
     private TextView textView_translation_word;
     private RecyclerView recycler_view_translation_phonetics, recycler_view_translation_meaning;
     private ProgressDialog progressDialog;
-    //PhoneticAdapter phoneticAdapter;
-    //MeaningAdapter meaningAdapter;
+    PhoneticAdapter phoneticAdapter;
+    MeaningAdapter meaningAdapter;
 
 
     public TranslationFragment() {
@@ -67,7 +46,7 @@ public class TranslationFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        searchView = binding.searchView;
+        //searchView = binding.searchView;
         textView_translation_word = binding.textViewTranslationWord;
         recycler_view_translation_meaning = binding.recyclerViewTranslationMeaning;
         recycler_view_translation_phonetics = binding.recyclerViewTranslationPhonetics;
@@ -115,7 +94,7 @@ public class TranslationFragment extends Fragment {
         }
     };
 
-    /*private void showData(APIResponse apiResponse) {
+    private void showData(APIResponse apiResponse) {
         String textWord = textView_translation_word.getText().toString().split(" ")[0] + " ";
         textView_translation_word.setText(textWord + apiResponse.getWord());
 
@@ -129,5 +108,5 @@ public class TranslationFragment extends Fragment {
 
     }
 
-     */
+
 }

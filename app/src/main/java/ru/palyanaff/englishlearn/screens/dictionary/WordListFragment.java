@@ -1,6 +1,7 @@
 package ru.palyanaff.englishlearn.screens.dictionary;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -21,10 +22,15 @@ import java.util.Collections;
 import java.util.List;
 
 import ru.palyanaff.englishlearn.R;
+import ru.palyanaff.englishlearn.adapter.WordAdapter;
 import ru.palyanaff.englishlearn.data.User;
 import ru.palyanaff.englishlearn.data.Word;
 import ru.palyanaff.englishlearn.databinding.FragmentWordListBinding;
+import ru.palyanaff.englishlearn.datasource.Datasource;
 
+/**
+ * A fragment representing a list of Items.
+ */
 public class WordListFragment extends Fragment {
     private static final String TAG = "WordFragment";
     FragmentWordListBinding binding;
@@ -60,7 +66,7 @@ public class WordListFragment extends Fragment {
                     (o1, o2) -> o1.getWordText().compareTo(o2.getWordText()));
             initRecyclerView(view, words);
         } else {
-            workWithWords(view);
+            //workWithWords(view);
         }
 
         return view;
@@ -112,7 +118,7 @@ public class WordListFragment extends Fragment {
         recyclerView.setAdapter(wordAdapter);
     }
 
-    private void workWithWords(View view) {
+    /*private void workWithWords(View view) {
         FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference("Users");
 
@@ -137,5 +143,5 @@ public class WordListFragment extends Fragment {
                         Log.d(TAG, "Failed on getting actual words");
                     }
                 });
-    }
+    }*/
 }

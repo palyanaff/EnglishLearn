@@ -60,14 +60,14 @@ public class DictionaryFragment extends Fragment {
             activity = (AppCompatActivity) v.getContext();
             navController = Navigation.findNavController(activity, R.id.nav_host_fragment);
 
-            //navController.navigate(R.id.action_dictionaryFragment_to_newDictionary);
+            navController.navigate(R.id.action_dictionaryFragment_to_newDictionary);
 
         });
 
         return view;
     }
 
-    /*@Override
+    @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         inflater.inflate(R.menu.search_dictionary_menu, menu);
         super.onCreateOptionsMenu(menu, inflater);
@@ -76,10 +76,10 @@ public class DictionaryFragment extends Fragment {
         menuItem.setOnMenuItemClickListener(item -> {
             activity = (AppCompatActivity) getContext();
             navController = Navigation.findNavController(activity, R.id.nav_host_fragment);
-            //navController.navigate(R.id.action_dictionaryFragment_to_translationFragment);
+            navController.navigate(R.id.action_dictionaryFragment_to_translationFragment);
             return true;
         });
-    }*/
+    }
 
     private void initRecyclerView(View view, List<String> headers){
         RecyclerView recyclerView = view.findViewById(R.id.dictionary_recycler_view);
