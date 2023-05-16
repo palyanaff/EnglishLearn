@@ -46,13 +46,13 @@ public class WordListFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        dictionaryHeader = WordListFragmentArgs.fromBundle(getArguments()).getDictionaryHeader();
+        //dictionaryHeader = WordListFragmentArgs.fromBundle(getArguments()).getDictionaryHeader();
         setHasOptionsMenu(true);
         binding.addWordButton.setOnClickListener(addWordListener());
 
         View view = binding.getRoot();
 
-        if (isDefaultHeader(dictionaryHeader)) {
+        /*if (isDefaultHeader(dictionaryHeader)) {
             Datasource datasource = new Datasource(getContext());
             List<Word> words = datasource.loadWords(dictionaryHeader);
             //noinspection ComparatorCombinators
@@ -61,7 +61,7 @@ public class WordListFragment extends Fragment {
             initRecyclerView(view, words);
         } else {
             workWithWords(view);
-        }
+        }*/
 
         return view;
     }
@@ -78,9 +78,9 @@ public class WordListFragment extends Fragment {
 
             AppCompatActivity activity = (AppCompatActivity) v.getContext();
             NavController navController = Navigation.findNavController(activity, R.id.nav_host_fragment);
-            WordListFragmentDirections.ActionWordFragmentToNewWordFragment action =
+            /*WordListFragmentDirections.ActionWordFragmentToNewWordFragment action =
                     WordListFragmentDirections.actionWordFragmentToNewWordFragment(dictionaryHeader);
-            navController.navigate(action);
+            navController.navigate(action);*/
         };
     }
 
@@ -107,12 +107,12 @@ public class WordListFragment extends Fragment {
         RecyclerView recyclerView = view.findViewById(R.id.recycler_view_word_list);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(view.getContext());
         recyclerView.setLayoutManager(layoutManager);
-        WordAdapter wordAdapter = new WordAdapter(
+        /*WordAdapter wordAdapter = new WordAdapter(
                 WordListFragment.this.getContext(), dictionaryHeader, words);
-        recyclerView.setAdapter(wordAdapter);
+        recyclerView.setAdapter(wordAdapter);*/
     }
 
-    private void workWithWords(View view) {
+    /*private void workWithWords(View view) {
         FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference("Users");
 
@@ -137,5 +137,5 @@ public class WordListFragment extends Fragment {
                         Log.d(TAG, "Failed on getting actual words");
                     }
                 });
-    }
+    }*/
 }

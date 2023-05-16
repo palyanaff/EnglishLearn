@@ -55,14 +55,14 @@ public class DictionaryFragment extends Fragment {
         workWithHeaders(view);
 
         setHasOptionsMenu(true);
-        button = view.findViewById(R.id.add_button);
-        button.setOnClickListener(v -> {
+        //button = view.findViewById(R.id.add_button);
+        /*button.setOnClickListener(v -> {
             activity = (AppCompatActivity) v.getContext();
             navController = Navigation.findNavController(activity, R.id.nav_host_fragment);
 
             //navController.navigate(R.id.action_dictionaryFragment_to_newDictionary);
 
-        });
+        });*/
 
         return view;
     }

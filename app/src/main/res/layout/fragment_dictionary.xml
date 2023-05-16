@@ -5,67 +5,57 @@
     android:layout_height="match_parent"
     android:name="ru.palyanaff.samsung_project_english_learning.DictionaryFragment"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-<<<<<<< Updated upstream
-android:background="@color/grey_background"
-tools:context=".screens.DictionaryFragment"
-android:paddingTop="16dp"
-android:paddingLeft="16dp"
-android:paddingRight="16dp">
-=======
-tools:listitem="@layout/dictionary_header_item"
-tools:context=".screens.dictionary.DictionaryFragment">
->>>>>>> Stashed changes
+    android:paddingTop="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    tools:listitem="@layout/dictionary_header_item"
+    tools:context=".screens.dictionary.DictionaryFragment">
 
-<androidx.recyclerview.widget.RecyclerView
-    android:id="@+id/dictionary_recycler_view"
-    android:layout_width="match_parent"
-<<<<<<< Updated upstream
-    android:layout_height="wrap_content"
-    app:cardElevation="8dp"
-    app:cardCornerRadius="5dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/dictionary_recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="5dp">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_launcher_background"
-            tools:srcCompat="@drawable/ic_launcher_foreground" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/dictionary"
-            android:textSize="32sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageView"
-            app:layout_constraintTop_toTopOf="parent" />
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_launcher_background"
+                tools:srcCompat="@drawable/ic_launcher_foreground" />
 
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView"
-            app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dictionary"
+                android:textSize="32sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView"
+                app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.cardview.widget.CardView>
-=======
-android:layout_height="match_parent"
-android:scrollbars="vertical"
-android:background="@color/grey_background_light"
-app:layoutManager="LinearLayoutManager"/>
->>>>>>> Stashed changes
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.recyclerview.widget.RecyclerView>
+
 
 </FrameLayout>

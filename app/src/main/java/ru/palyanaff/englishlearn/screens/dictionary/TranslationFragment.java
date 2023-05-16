@@ -35,12 +35,15 @@ import java.util.Collections;
 import java.util.List;
 
 import ru.palyanaff.englishlearn.R;
-import ru.palyanaff.englishlearn.adapter.WordAdapter;
+//import ru.palyanaff.englishlearn.adapter.WordAdapter;
 import ru.palyanaff.englishlearn.data.User;
 import ru.palyanaff.englishlearn.data.Word;
 import ru.palyanaff.englishlearn.databinding.FragmentTranslationBinding;
 import ru.palyanaff.englishlearn.databinding.FragmentWordListBinding;
-import ru.palyanaff.englishlearn.datasource.Datasource;
+import ru.palyanaff.englishlearn.translation.OnFetchDataListener;
+import ru.palyanaff.englishlearn.translation.RequestManager;
+import ru.palyanaff.englishlearn.translation.models.APIResponse;
+//import ru.palyanaff.englishlearn.datasource.Datasource;
 
 public class TranslationFragment extends Fragment {
     private static final String TAG = "TranslationFragment";
@@ -67,7 +70,7 @@ public class TranslationFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        searchView = binding.searchView;
+        //searchView = binding.searchView;
         textView_translation_word = binding.textViewTranslationWord;
         recycler_view_translation_meaning = binding.recyclerViewTranslationMeaning;
         recycler_view_translation_phonetics = binding.recyclerViewTranslationPhonetics;
@@ -105,7 +108,7 @@ public class TranslationFragment extends Fragment {
                 Toast.makeText(getContext(), "No data found", Toast.LENGTH_SHORT).show();
                 return;
             }
-            showData(apiResponse);
+            //showData(apiResponse);
         }
 
         @Override

@@ -8,8 +8,16 @@ import android.os.Bundle;
 
 import java.util.Objects;
 
+/**
+ * MainActivity contains all fragments of application
+ */
 public class MainActivity extends AppCompatActivity {
-    private NavController navController;
+    private NavController navController; // Navigation controller helps with navigation between fragments
+
+    /**
+     * Method that starts application
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
